@@ -1,0 +1,353 @@
+.actors{
+    color: var( --color-text);
+}
+.actors_title {
+    font-size: 40px;
+}
+.actors_search{
+    display: flex;
+    gap: 14px;
+    margin-bottom: 9px;
+}
+.actors_search-input{
+    flex: 1;
+    padding: 16px 18px;
+    min-height: 56px;
+    border: 1px solid var(--color-accent);
+    border-radius: 18px;
+    background: var(--color-light);
+    font-size: 14px;
+    outline: none;
+}
+.actors_history{
+    margin-bottom: 33px;
+}
+.actors_history-title{
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+.actors_history-list{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.actors_history-card{
+    width: 120px;
+    min-height: 210px;
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--color-light);
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.actors_history-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.actors_history-card span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.actors-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+}
+.actor_card {
+    overflow: hidden;
+    border-radius: 18px;
+    background: var(--color-light);
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.3s ease;
+}
+.actor_card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+.actor_card-photo_wrap{
+    width: 100%;
+    background: gray;
+    overflow: hidden;
+    height: 280px;
+}
+.actor_card-photo{
+    width: 100%;
+    object-fit: cover;
+    height: 280px;
+}
+.actor_card-content{
+    padding: 16px;
+}
+.actor_card-name{
+    font-size: 18px;
+    min-height: 44px;
+    margin-bottom: 14px;
+}
+.actor_card-button{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-accent);
+    border-radius: 14px;
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.actor_card-button:hover{
+    background: var(--color-accent);
+    color: var(--color-text-light);
+}
+.actor_card-template{
+    display: none;
+}
+.actors_pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actors_pagination-page{
+    font-weight: 700;
+}
+.actor_modal{
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+.actor_modal.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.actor_modal-content{
+    position: relative;
+    width: 100%;
+    max-width: 950px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 32px;
+    border-radius: 18px;
+    background: var(--color-light);
+}
+.actor_modal-close{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 36px;
+}
+.actor_modal-info{
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+}
+.actor_modal-photo_wrap{
+    width: 100%;
+    background: gray;
+    overflow: hidden;
+    min-height: 360px;
+    border-radius: 18px;
+}
+.actor_modal-photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.actor_modal-name{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.actor_modal-text p{
+    margin-bottom: 18px;
+}
+.actor_modal-text h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.actor_modal-template{
+    display: none;
+}
+
+/* ================= АДАПТИВ СТРАНИЦЫ АКТЁРОВ ================= */
+
+/* Планшеты */
+@media (max-width: 992px) {
+
+    /* Уменьшаем заголовок страницы */
+    .actors_title {
+        font-size: 36px;
+    }
+
+    /* Делаем сетку актёров в 3 колонки вместо 5 */
+    .actors-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    /* Уменьшаем высоту фото актёра */
+    .actor_card-photo_wrap,
+    .actor_card-photo {
+        height: 250px;
+    }
+
+    /* В модальном окне фото и текст ставим друг под другом */
+    .actor_modal-info {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ограничиваем ширину фото в модальном окне */
+    .actor_modal-photo_wrap {
+        max-width: 320px;
+        min-height: 400px;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 768px) {
+
+    /* Уменьшаем заголовок страницы */
+    .actors_title {
+        font-size: 32px;
+    }
+
+    /* Уменьшаем заголовок истории */
+    .actors_history-title {
+        font-size: 24px;
+    }
+
+    /* Делаем сетку актёров в 2 колонки */
+    .actors-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Уменьшаем фото актёров */
+    .actor_card-photo_wrap,
+    .actor_card-photo {
+        height: 220px;
+    }
+
+    /* Уменьшаем внутренние отступы карточки */
+    .actor_card-content {
+        padding: 14px;
+    }
+
+    /* Уменьшаем имя актёра */
+    .actor_card-name {
+        font-size: 16px;
+    }
+
+    /* Уменьшаем кнопку */
+    .actor_card-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Уменьшаем отступы модального окна */
+    .actor_modal-content {
+        padding: 26px;
+    }
+
+    /* Уменьшаем имя актёра в модальном окне */
+    .actor_modal-name {
+        font-size: 26px;
+    }
+}
+
+/* Маленькие телефоны */
+@media (max-width: 480px) {
+
+    /* Уменьшаем заголовок страницы */
+    .actors_title {
+        font-size: 28px;
+    }
+
+    /* Поле поиска делаем компактнее */
+    .actors_search-input {
+        min-height: 48px;
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    /* Уменьшаем заголовок истории */
+    .actors_history-title {
+        font-size: 20px;
+    }
+
+    /* Карточки истории делаем чуть меньше */
+    .actors_history-card {
+        width: 100px;
+        min-height: 180px;
+    }
+
+    /* Уменьшаем фото в истории */
+    .actors_history-card img {
+        height: 125px;
+    }
+
+    /* Уменьшаем текст в истории */
+    .actors_history-card span {
+        font-size: 12px;
+    }
+
+    /* Сетку актёров делаем в одну колонку */
+    .actors-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Фото актёра делаем высоким и аккуратным */
+    .actor_card-photo_wrap,
+    .actor_card-photo {
+        height: 360px;
+    }
+
+    /* Модальное окно ближе к краям телефона */
+    .actor_modal {
+        padding: 12px;
+    }
+
+    /* Уменьшаем внутренние отступы модального окна */
+    .actor_modal-content {
+        padding: 22px 16px;
+        border-radius: 14px;
+    }
+
+    /* Уменьшаем кнопку закрытия */
+    .actor_modal-close {
+        font-size: 28px;
+    }
+
+    /* Фото в модальном окне занимает всю ширину */
+    .actor_modal-photo_wrap {
+        max-width: 100%;
+        min-height: 360px;
+    }
+
+    /* Уменьшаем имя актёра в модальном окне */
+    .actor_modal-name {
+        font-size: 24px;
+    }
+
+    /* Уменьшаем обычный текст в модальном окне */
+    .actor_modal-text p {
+        font-size: 15px;
+    }
+
+    /* Уменьшаем заголовки внутри модального окна */
+    .actor_modal-text h3 {
+        font-size: 18px;
+    }
+}
