@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Актеры фильма — Киносайт</title>
+    <meta name="description" content="Список актеров фильма, биография, фотографии и фильмография актеров.">
+    <meta name="keywords" content="актеры, фильмография, актер кино, биография актера, фильмы">
+
+    <meta property="og:title" content="Актеры фильма — Киносайт">
+    <meta property="og:description" content="Изучай информацию об актерах фильма, биографию и фильмографию.">
+    <meta property="og:image" content="https://evelinastepanova.github.io/kinosite/assets/images/og-actors.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evelinastepanova.github.io/kinosite/actors.html">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffb300">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/theme.css">
+
+    <link rel="stylesheet" href="css/actors.css">
+</head>
+<body>
+    <header class="header" itemscope itemtype="https://schema.org/WPHeader">
+        <div class="container header_container">
+            <a class="header_logo" href="#">
+                <img src="assets/images/logo.png" alt="Логотип сайта Киносайт" itemprop="logo">
+            </a>
+            <nav class="header_nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <ul class="header_menu">
+                    <li class="header_item" itemprop="name">
+                        <a class="header_item-link" href="top250.html" itemprop="url">ТОП 250</a>
+                    </li>
+                    <li class="header_item" itemprop="name">
+                        <a class="header_item-link" href="#about" itemprop="url">О платформе</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_actions">
+                <button class="header_theme" aria-label="Переключить тему" type="button">
+                    <img src="assets/images/tema.png" alt="Иконка темы">
+                </button>
+
+                <button class="header_burger" type="button">
+                    <span class="header_burger-line"></span>
+                    <span class="header_burger-line"></span>
+                    <span class="header_burger-line"></span>
+                </button>
+            </div>
+            <!-- Мобильное меню -->
+            <nav class="header_mobile-menu">
+                <ul class="header_mobile-list">
+                    <li><a href="top250.html">ТОП 250</a></li>
+                    <li><a href="#about">О платформе</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="actors section">
+            <div class="container">
+                <h1 class="actors_title title">Актеры фильма</h1>
+                <div class="actors_search">
+                    <input class="actors_search-input" type="text" placeholder="Введите имя актера">
+                </div>
+                <div class="actors_history">
+                    <h2 class="actors_history-title">Последние просмотренные актеры</h2>
+                    <div class="actors_history-list">
+                        <!-- JS будет добавлять карточки -->
+                    </div>
+                </div>
+                <div class="actors-list">
+                    <article class="actor_card actor_card-template">
+                        <div class="actor_card-photo_wrap">
+                            <img class="actor_card-photo" src="" alt="Фото актера">
+                        </div>
+                        <div class="actor_card-content">
+                            <h3 class="actor_card-name">Имя актера</h3>
+                            <button class="actor_card-button" type="button">Подробнее</button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="movies_pagination actors_pagination">
+                    <button class="movies_pagination-button actors_pagination-prev"> 
+                        &#8249;
+                    </button>
+                    <span class="actors_pagination-page">1</span>
+                    <button class="movies_pagination-button actors_pagination-next">
+                        &#8250;
+                    </button>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="actor_modal">
+        <div class="actor_modal-content">
+            <button class="actor_modal-close" type="button">x</button>
+            <div class="actor_modal-info actor_modal-template">
+                <div class="actor_modal-photo_wrap">
+                    <img class="actor_modal-photo" src="" alt="Фото актера">
+                </div>
+                <div class="actor_modal-text">
+                    <h2 class="actor_modal-name">Имя актера</h2>
+                    <p>
+                        <strong>Дата рождения:</strong>
+                        <span class="actor_modal-birthday">Нет данных</span>
+                    </p>
+                    <p>
+                        <strong>Место рождения:</strong>
+                        <span class="actor_modal-birthplace">Нет данных</span>
+                    </p>
+                    <h3>Биография</h3>
+                    <p class="actor_modal-facts">Биография отсутствует</p>
+                    <h3>Фильмография</h3>
+                    <ul class="actor_modal-films">
+                        <li>Фильмография отсутствует</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="footer_top">
+            <div class="container footer_top-container">
+                <div class="footer_left">
+                    <a class="footer_logo" href="#">
+                        <img src="assets/images/logo.png" alt="Логотип сайта Киносайт">
+                    </a>
+                </div>
+                <div class="footer_center">
+                    <nav class="footer_nav">
+                        <ul class="footer_menu">
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="top250.html" itemprop="url">ТОП 250</a>
+                            </li>
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="#" itemprop="url">Форум</a>
+                            </li>
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="#" itemprop="url">О платформе</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer_right">
+                    <a class="footer_contact" href="mailto:info@kinosite.ru">info@kinosite.ru</a>
+                    <a class="footer_contact" href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    <div class="footer_social">
+                        <a class="footer_social-link" href="#">
+                            <img src="assets/icons/tg.jpg" alt="Telegram">
+                        </a>
+                        <a class="footer_social-link" href="#">
+                            <img src="assets/icons/VK.com-logo.svg" alt="VK">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container footer_bottom_container">
+                <a class="footer_policy-link" href="#">Политика конфидециальности</a>
+                <div class="footer_copy">
+                    © 2026 Киносайт. Все права защищены
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/actors.js"></script>
+</body>
+</html>

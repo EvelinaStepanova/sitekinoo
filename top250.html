@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТОП фильмов — Киносайт</title>
+    <meta name="description" content="Список лучших фильмов из ТОП с рейтингами и постерами.">
+    <meta name="keywords" content="топ 250, лучшие фильмы, рейтинг фильмов, кино, Кинопоиск">
+
+    <meta property="og:title" content="ТОП-250 фильмов — Киносайт">
+    <meta property="og:description"
+        content="Изучай список лучших фильмов из ТОП-250, смотри рейтинги и выбирай кино для просмотра.">
+
+    <meta property="og:image" content="https://evelinastepanova.github.io/kinosite/assets/images/og-top250.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://evelinastepanova.github.io/kinosite/top250.html">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffb300">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- стили для страницы топ 250 -->
+     <link rel="stylesheet" href="css/top250.css">
+</head>
+<body>
+    <header class="header" itemscope itemtype="https://schema.org/WPHeader">
+        <div class="container header_container">
+            <a class="header_logo" href="index.html">
+                <img src="assets/images/logo.png" alt="Логотип сайта Киносайт" itemprop="logo">
+            </a>
+            <nav class="header_nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
+                <ul class="header_menu">
+                    <li class="header_item" itemprop="name">
+                        <a class="header_item-link" href="top250.html" itemprop="url">ТОП 250</a>
+                    </li>
+                    <li class="header_item" itemprop="name">
+                        <a class="header_item-link" href="index.html#about" itemprop="url">О платформе</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header_actions">
+                <button class="header_theme" aria-label="Переключить тему" type="button">
+                    <img src="assets/images/tema.png" alt="Иконка темы">
+                </button>
+
+                <button class="header_burger" type="button">
+                    <span class="header_burger-line"></span>
+                    <span class="header_burger-line"></span>
+                    <span class="header_burger-line"></span>
+                </button>
+            </div>
+            <!-- Мобильное меню -->
+            <nav class="header_mobile-menu">
+                <ul class="header_mobile-list">
+                    <li><a href="top250.html">ТОП 250</a></li>
+                    <li><a href="index.html#about">О платформе</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="top250 section">
+            <div class="container">
+                <h1 class="top250_title title">ТОП фильмов</h1>
+                <div class="top250_controls">
+                    <div class="top250_tabs">
+                        <button class="top250_tab active" type="button" data-limit="10">ТОП-10</button>
+                        <button class="top250_tab" type="button" data-limit="50">ТОП-50</button>
+                        <button class="top250_tab" type="button" data-limit="250">ТОП-250</button>
+                    </div>
+                    <div class="top250_filters">
+                        <input class="top250_search" type="text" placeholder="Название фильма">
+                        <select class="top250_sort">
+                            <option value="default">По порядку</option>
+                            <option value="year-new">Сначала новые</option>
+                            <option value="year-old">Сначала старые</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="top250_list">
+                    <!-- Из JS -->
+                     <!-- Пример карточки -->
+                      <article class="top250_card">
+                        <div class="top250_card-number">1</div>
+                        <img class="top250_card-poster" src="" alt="Постер фильма">
+                        <div class="top250_card-content">
+                            <h2 class="top250_card-title">Интерстеллар</h2>
+                            <p class="top250_card-genre">Драма</p>
+                            <p class="top250_card-duration">129 мин</p>
+                        </div>
+                        <div class="top250_card-rating">8.7</div>
+                      </article>
+                </div>
+                <div class="movies_pagination top250_pagination">
+                    <button class="movies_pagination-button top250_pagination-prev"> 
+                        &#8249;
+                    </button>
+                    <span class="top250_page">1 / 3</span>
+                    <button class="movies_pagination-button top250_pagination-next">
+                        &#8250;
+                    </button>
+                 </div>
+            </div>
+        </section>
+    </main>
+     <footer class="footer" itemscope itemtype="https://schema.org/WPFooter">
+        <div class="footer_top">
+            <div class="container footer_top-container">
+                <div class="footer_left">
+                    <a class="footer_logo" href="#">
+                        <img src="assets/images/logo.png" alt="Логотип сайта Киносайт">
+                    </a>
+                </div>
+                <div class="footer_center">
+                    <nav class="footer_nav">
+                        <ul class="footer_menu">
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="top250.html" itemprop="url">ТОП 250</a>
+                            </li>
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="#" itemprop="url">Форум</a>
+                            </li>
+                            <li class="footer_item" itemprop="name">
+                                <a class="footer_link" href="index.html#about" itemprop="url">О платформе</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer_right">
+                    <a class="footer_contact" href="mailto:info@kinosite.ru">info@kinosite.ru</a>
+                    <a class="footer_contact" href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    <div class="footer_social">
+                        <a class="footer_social-link" href="#">
+                            <img src="assets/icons/tg.jpg" alt="Telegram">
+                        </a>
+                        <a class="footer_social-link" href="#">
+                            <img src="assets/icons/VK.com-logo.svg" alt="VK">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container footer_bottom_container">
+                <a class="footer_policy-link" href="#">Политика конфиденциальности</a>
+                <div class="footer_copy">
+                    © 2026 Киносайт. Все права защищены
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/top250.js"></script>
+</body>
+</html>
